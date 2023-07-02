@@ -9,12 +9,12 @@ This project was created with [Laravel](https://laravel.com/docs/10.x/installati
 
 ## Run this project
 
-To run this project perform the following steps
+To run this project perform the following steps:
 
 ### Clone project
 
 Run:
-`https://github.com/gsmoral/podcaster.git`
+`https://github.com/gsmoral/api_bike.git`
 
 ### Docker
 
@@ -46,11 +46,19 @@ For ***Protected Routes -> *** Use: **Authorization - Bearer Token** witn obtain
 
 `localhost:8080/api/auth/login`
 
-Body:
+***Body:***
 ```json
 {
   "email": "test@example.com",
   "password": "password"
+}
+```
+
+***Response example:***
+```json
+{
+    "status": true,
+    "token": "NHFaGamgR2pPxPKgzNhrpVRsdoo0uicmtJwVkqNpHQqu"
 }
 ```
 
