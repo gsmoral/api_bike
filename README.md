@@ -14,7 +14,9 @@ To run this project perform the following steps:
 ### Clone project
 
 Run:
-`https://github.com/gsmoral/api_bike.git`
+`git clone https://github.com/gsmoral/api_bike.git` and navigate to project folder.
+
+**IMPORTANT:** in \laravel-app folder, rename **.env.example** to **.env**
 
 ### Docker
 
@@ -27,7 +29,17 @@ Connect to Docker container:
 `docker exec -it l_app /bin/sh`
 
 Inside container run:
+`composer install`
+and
 `php artisan migrate --seed`
+
+---
+
+### phpMyAdmin
+You can administrate the database from
+`http://localhost:8081/`
+
+Use: `Server: l_mysql_db, User: root, Password: toor`
 
 ---
 
