@@ -29,29 +29,32 @@ Connect to Docker container:
 Inside container run:
 `php artisan migrate --seed`
 
+---
+
 ## API
 
 With postman, set headers: **Content-Type: application/json** and **Accept: application/json**
 
-### POST - Login 
-
-`localhost:8080/api/auth/login`
-
-Body:
-`{
-  "email": "test@example.com",
-  "password": "password"
-}`
-
-### Protected Routes
-Use: **Authorization - Bearer Token** witn obtained token
+For ***Protected Routes -> *** Use: **Authorization - Bearer Token** witn obtained token in ***Login***
 
 ***Response to Unauthenticated:***
 `{
     "message": "Unauthenticated."
 }`
 
-#### GET - Get bikes
+### POST - Login 
+
+`localhost:8080/api/auth/login`
+
+Body:
+```json
+{
+  "email": "test@example.com",
+  "password": "password"
+}
+```
+
+### GET - Get bikes
 
 `localhost:8080/api/bikes`
 
@@ -59,20 +62,23 @@ Search params for example:
 `localhost:8080/api/bikes?name="Mountain"&manufacturer=Technogym&item_type="item_type"&sort=asc`
 
 ***Response example:***
-`{
+```json
+{
     "status": true,
     "total": 2,
     "data": [...]
-}`
+}
+```
 
-#### GET - Get bike
+### GET - Get bike
 
 Response cached.
 
 `localhost:8080/api/bike/1`
 
 ***Response example:***
-`{
+```json
+{
     "status": true,
     "data": {
         "id": 1,
@@ -93,25 +99,29 @@ Response cached.
             }
         ]
     }
-}`
+}
+```
 
-#### POST - Save Bike
+### POST - Save Bike
 To create a new bike, the elements must exist in the database (30 elements have been created).
 Only created item IDs can be submitted.
 
 `localhost:8080/api/bikes`
 
 ***Body:***
-`{
+```json
+{
   "name": "Test 3",
   "manufacturer": "ABC Bikes",
   "description": "A high-quality mountain bike",
   "price": 100.99,
   "item_ids": [10,13,21]
-}`
+}
+```
 
 ***Response example:***
-`{
+```json
+{
     "status": true,
     "data": {
         "name": "Test 3",
@@ -148,4 +158,5 @@ Only created item IDs can be submitted.
             }
         ]
     }
-}`
+}
+```
