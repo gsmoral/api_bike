@@ -19,7 +19,8 @@ Run:
 ### Docker
 
 Run:
-`docker-compose build`
+`docker-compose build` 
+and 
 `docker-compose up -d`
 
 Connect to Docker container:
@@ -28,4 +29,17 @@ Connect to Docker container:
 Inside container run:
 `php artisan migrate --seed`
 
+## API
+
+With postman, set headers: **Content-Type: application/json** and **Accept: application/json**
+
+### Login
+
+`localhost:8080/api/auth/login`
+
+Body:
+`{
+  "email": "test@example.com",
+  "password": "password"
+}`
 
